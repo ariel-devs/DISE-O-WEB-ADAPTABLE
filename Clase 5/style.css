@@ -1,0 +1,132 @@
+:root {
+    --primary--color: hsla(166 16.6% 46.1% / 0.7);
+    --secundary--color: hsl(166 11.7% 46.1%);
+    --text--color: rgba(0, 0, 0, 1);
+    --border--color: hsla(166 16.6% 46.1% / 0.5);
+    --btn--color: hsla(166 79.4% 65.7% / 0.58);
+    --btn--color--trans: hsla(166 33.6% 53.9% / 0.58);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: var(--primary--color);
+    padding: 20px;
+}
+
+.hero {
+    background-image:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.10),
+            rgba(0, 0, 0, 0.72)),
+        url("./assets/Teknova.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+    width: 100%;
+    border-radius: 20px;
+    color: white;
+    padding: 40px;
+    display: flexbox;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 20%;
+    padding-top: 11%;
+}
+
+.hero h1 {
+    font-size: 50px;
+}
+
+.btn-reserva {
+    display: inline-block;
+    background: radial-gradient(circle, rgba(355, 355, 355, 0.4), rgb(100, 150, 25));
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    transition: all 0.3 ease;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+.btn-reserva:hover {
+    border: none;
+    box-shadow: 10px 10px 2px 1px rgb(0 0 255 / 0.2);
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.product-card {
+    background-color: var(--primary--color);
+    border: 1px solid var(--border--color);
+    border-radius: 10px;
+    margin: 20px;
+    padding: 10px;
+}
+
+.card-image {
+    background-color: var(--secundary--color);
+    font-size: 50px;
+    border-radius: 10px;
+}
+
+.product-name {
+    margin: 15px 0 10px 0;
+    font-size: 40px;
+    text-decoration: underline overline hsl(271 11.5% 46.1%)
+}
+
+.product-desc {
+    font-size: 15px;
+}
+
+.product-price {
+    padding: 15px;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.btn-comprar {
+    border: 0;
+    border-radius: 20px;
+    background-color: var(--btn--color);
+    font-style: inherit;
+    padding: 10px;
+    transition: all 0.3 ease;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+.btn-comprar:hover {
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: var(--btn--color);
+    padding: 10px;
+    transform: translateY(-3px);
+    box-shadow: 10px 10px 2px 1px rgb(0 0 255 / 0.2);
+}
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-2px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}

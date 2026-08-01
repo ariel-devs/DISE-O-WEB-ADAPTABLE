@@ -1,10 +1,14 @@
 :root {
-    --primary--color: hsla(166 16.6% 46.1% / 0.7);
-    --secundary--color: hsl(166 11.7% 46.1%);
+    --primary--color: hsla(166, 16.6%, 46.1%, 0.7);
+    --secundary--color: hsl(166, 11.7%, 46.1%);
     --text--color: rgba(0, 0, 0, 1);
-    --border--color: hsla(166 16.6% 46.1% / 0.5);
-    --btn--color: hsla(166 79.4% 65.7% / 0.58);
-    --btn--color--trans: hsla(166 33.6% 53.9% / 0.58);
+    --border--color: hsla(166, 16.6%, 46.1%, 0.5);
+    --btn--color: hsla(166, 79.4%, 65.7%, 0.58);
+    --btn--color--trans: hsla(166, 33.6%, 53.9%, 0.58);
+
+    --footer-color-1: hsl(271, 11.5%, 46.1%);
+    --footer-color-2: hsl(166, 16.6%, 46.1%);
+    --footer-color-3: hsl(200, 15%, 40%);
 }
 
 * {
@@ -21,8 +25,9 @@ body {
 .hero {
     background-image:
         linear-gradient(to bottom,
-            rgba(0, 0, 0, 0.10),
-            rgba(0, 0, 0, 0.72)),
+            rgba(0, 0, 0, 0.7) 0%,
+            rgba(0, 0, 0, 0.4) 50%,
+            rgba(0, 0, 0, 0.8) 100%),
         url("./assets/Teknova.png");
     background-size: cover;
     background-position: center;
@@ -31,90 +36,166 @@ body {
     border-radius: 20px;
     color: white;
     padding: 40px;
-    display: flexbox;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 20%;
-    padding-top: 11%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 15%;
 }
 
 .hero h1 {
-    font-size: 50px;
+    font-size: 70px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-.btn-reserva {
-    display: inline-block;
-    background: radial-gradient(circle, rgba(355, 355, 355, 0.4), rgb(100, 150, 25));
+.hero h2 {
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.btn-comprar {
+    border: 0;
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
     color: white;
-    padding: 10px;
-    border-radius: 15px;
-    transition: all 0.3 ease;
+    cursor: pointer;
+    transition: all 0.3s ease;
     animation: flotar 3s ease-in-out infinite;
+
+    background: radial-gradient(circle at 30% 30%,
+            #a8e6cf,
+            #55b89a,
+            #2d6a5e);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.btn-reserva:hover {
-    border: none;
-    box-shadow: 10px 10px 2px 1px rgb(0 0 255 / 0.2);
+.btn-comprar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    background: radial-gradient(circle at 30% 30%,
+            #c5f0df,
+            #6ccdb2,
+            #3a8a7a);
 }
 
 .cards-container {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    text-align: center;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
+    align-items: stretch;
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .product-card {
-    background-color: var(--primary--color);
+    background-color: white;
     border: 1px solid var(--border--color);
-    border-radius: 10px;
-    margin: 20px;
-    padding: 10px;
+    border-radius: 15px;
+    padding: 25px 20px;
+    width: 280px;
+    flex: 0 1 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil para dar profundidad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .card-image {
     background-color: var(--secundary--color);
-    font-size: 50px;
-    border-radius: 10px;
+    font-size: 60px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
 }
 
 .product-name {
-    margin: 15px 0 10px 0;
-    font-size: 40px;
-    text-decoration: underline overline hsl(271 11.5% 46.1%)
+    margin: 10px 0;
+    font-size: 28px;
+    text-decoration: underline overline var(--footer-color-1);
 }
 
 .product-desc {
-    font-size: 15px;
+    font-size: 0.95rem;
+    text-align: center;
+    color: #555;
+    margin-bottom: 15px;
+    flex-grow: 1;
 }
 
 .product-price {
-    padding: 15px;
-    font-size: 20px;
-    font-style: italic;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--secundary--color);
+    margin-bottom: 20px;
 }
 
-.btn-comprar {
-    border: 0;
-    border-radius: 20px;
-    background-color: var(--btn--color);
-    font-style: inherit;
-    padding: 10px;
-    transition: all 0.3 ease;
+.product-price small {
+    font-size: 16px;
+    font-weight: normal;
+    color: #888;
+}
+
+.btn-reserva {
+    display: inline-block;
+    background: linear-gradient(145deg, #a8e6cf, #55b89a);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
     animation: flotar 3s ease-in-out infinite;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.btn-comprar:hover {
-    border: none;
-    cursor: pointer;
+.btn-reserva:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #c5f0df, #6ccdb2);
+}
+
+.page-footer {
+    background: linear-gradient(to right,
+            var(--footer-color-1),
+            var(--footer-color-2),
+            var(--footer-color-3));
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
     border-radius: 20px;
-    background-color: var(--btn--color);
-    padding: 10px;
-    transform: translateY(-3px);
-    box-shadow: 10px 10px 2px 1px rgb(0 0 255 / 0.2);
+    font-size: 1.1rem;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.page-footer a {
+    color: #e0f7f0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.page-footer a:hover {
+    text-decoration: underline;
+    color: white;
 }
 
 @keyframes flotar {
@@ -123,7 +204,7 @@ body {
     }
 
     50% {
-        transform: translateY(-2px);
+        transform: translateY(-4px);
     }
 
     100% {

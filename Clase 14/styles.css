@@ -1,0 +1,341 @@
+```css
+
+/* RESET MÍNIMO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --overlay: rgba(0, 0, 0, 0.55);
+    --radio: 8px;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    color: #1e2a38;
+    background: #f4f6f8;
+    line-height: 1.5;
+}
+
+h1,
+h2 {
+    font-weight: 700;
+}
+
+/* HERO */
+.hero {
+    min-height: 60vh;
+
+    background:
+        linear-gradient(var(--overlay), var(--overlay)),
+        repeating-radial-gradient(circle at center,
+            rgba(255, 255, 255, 0.08) 0px,
+            rgba(255, 255, 255, 0.08) 10px,
+            transparent 10px,
+            transparent 20px),
+        url("https://placehold.co/1920x1080") center / cover no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+    opacity: 0.9;
+}
+
+/* ICONOS */
+.hero-iconos {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.icono {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+
+    background-image: url("sprite.png");
+    background-repeat: no-repeat;
+
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.3));
+}
+
+.icono-home {
+    background-position: 0 0;
+}
+
+.icono-user {
+    background-position: -32px 0;
+}
+
+.icono-buscar {
+    background-position: -64px 0;
+}
+
+/* CONTENIDO */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+.bloque {
+    margin-bottom: 3rem;
+}
+
+.bloque h2 {
+    margin-bottom: 1rem;
+    color: #1e3a5f;
+}
+
+.bloque code {
+    background: #e3e8ee;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* DEMOS */
+.demo {
+    position: relative;
+    height: 150px;
+    border-radius: var(--radio);
+
+    display: flex;
+    align-items: flex-end;
+
+    overflow: hidden;
+    margin-bottom: 10px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.demo-cover {
+    background:
+        url("https://placehold.co/400x300/667eea/667eea") center / cover no-repeat;
+}
+
+.demo-contain {
+    background:
+        #203a43 url("https://placehold.co/150x150/f5576c/f5576c") center / contain no-repeat;
+}
+
+.grad-linear-h {
+    background: linear-gradient(to right, #667eea, #764ba2);
+}
+
+.grad-linear-diag {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.grad-linear-hard {
+    background: linear-gradient(to right, #e96c4c 50%, #4c8ce9 50%);
+}
+
+.grad-radial {
+    background: radial-gradient(circle at center, #30cfd0 0%, #330867 100%);
+}
+
+/* ===================================================== */
+/* GRIDS                                                  */
+/* ===================================================== */
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+/* ===================================================== */
+/* ETIQUETAS                                              */
+/* ===================================================== */
+
+.etiqueta {
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    padding: 0.35rem 0.7rem;
+    border-radius: 5px;
+    margin: 0.7rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ===================================================== */
+/* PATRONES CON REPEATING-GRADIENT                        */
+/* ===================================================== */
+
+.patron-rayas {
+    background:
+        repeating-linear-gradient(45deg,
+            #667eea 0px,
+            #667eea 10px,
+            #764ba2 10px,
+            #764ba2 20px);
+}
+
+.patron-puntos {
+    background:
+        radial-gradient(circle,
+            #667eea 3px,
+            transparent 4px);
+    background-size: 20px 20px;
+    background-color: #e8eaf6;
+}
+
+.patron-cuadros {
+    background:
+        repeating-linear-gradient(0deg,
+            rgba(255, 255, 255, 0.25) 0px,
+            rgba(255, 255, 255, 0.25) 10px,
+            transparent 10px,
+            transparent 20px),
+        repeating-linear-gradient(90deg,
+            rgba(255, 255, 255, 0.25) 0px,
+            rgba(255, 255, 255, 0.25) 10px,
+            transparent 10px,
+            transparent 20px),
+        #667eea;
+}
+
+/* ===================================================== */
+/* FONDOS MÚLTIPLES / OVERLAY                             */
+/* ===================================================== */
+
+.overlay-oscuro {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.65)),
+        url("https://placehold.co/800x400/667eea/ffffff") center / cover no-repeat;
+
+    color: white;
+}
+
+.overlay-marca {
+    background:
+        linear-gradient(rgba(30, 58, 95, 0.75),
+            rgba(102, 126, 234, 0.75)),
+        url("https://placehold.co/800x400/f5576c/ffffff") center / cover no-repeat;
+
+    color: white;
+}
+
+/* ===================================================== */
+/* ICONOS Y SPRITE                                        */
+/* ===================================================== */
+
+.iconos {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconos .icono {
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.iconos .icono:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+}
+
+.sprite-demo {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+
+    background: white;
+    border-radius: var(--radio);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.sprite-demo .icono {
+    transition: transform 0.2s ease;
+}
+
+.sprite-demo .icono:hover {
+    transform: scale(1.15);
+}
+
+/* ===================================================== */
+/* FOOTER                                                 */
+/* ===================================================== */
+
+footer {
+    background: #1e2a38;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+footer p {
+    opacity: 0.85;
+    font-size: 0.9rem;
+}
+
+/* ===================================================== */
+/* RESPONSIVE                                             */
+/* ===================================================== */
+
+@media (max-width: 800px) {
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 2rem 1rem;
+    }
+
+    .hero {
+        min-height: 50vh;
+    }
+
+    .sprite-demo {
+        justify-content: center;
+    }
+}

@@ -128,23 +128,30 @@
             </div>
 
             <pre class="code"><code><span class="cm">&lt;!-- Forma 1: Inline — NO recomendado --&gt;</span>
-<span class="tag">&lt;button</span> <span class="atr">onclick</span>=<span class="str">"alert('Hola!')"</span><span class="tag">&gt;</span>Botón<span class="tag">&lt;/button&gt;</span>
-<span class="tag">&lt;a</span> <span class="atr">href</span>=<span class="str">"#"</span> <span class="atr">onmouseover</span>=<span class="str">"this.style.color='red'"</span><span class="tag">&gt;</span>Link<span class="tag">&lt;/a&gt;</span>
+                    <span class="tag">&lt;button</span> <span class="atr">onclick</span>=<span
+                        class="str">"alert('Hola!')"</span><span class="tag">&gt;</span>Botón<span
+                        class="tag">&lt;/button&gt;</span>
+                    <span class="tag">&lt;a</span> <span class="atr">href</span>=<span class="str">"#"</span> <span
+                        class="atr">onmouseover</span>=<span class="str">"this.style.color='red'"</span><span
+                        class="tag">&gt;</span>Link<span class="tag">&lt;/a&gt;</span>
 
-<span class="cm">&lt;!-- Forma 2: Internal — dentro del HTML --&gt;</span>
-<span class="tag">&lt;script&gt;</span>
-  document.querySelector(<span class="str">'h1'</span>).textContent = <span class="str">'Inicio'</span>;
-  console.log(<span class="str">'Script interno ejecutado'</span>);
-<span class="tag">&lt;/script&gt;</span>
+                    <span class="cm">&lt;!-- Forma 2: Internal — dentro del HTML --&gt;</span>
+                    <span class="tag">&lt;script&gt;</span>
+                    document.querySelector(<span class="str">'h1'</span>).textContent = <span
+                        class="str">'Inicio'</span>;
+                    console.log(<span class="str">'Script interno ejecutado'</span>);
+                    <span class="tag">&lt;/script&gt;</span>
 
-<span class="cm">&lt;!-- Forma 3: External — archivo separado (recomendado) --&gt;</span>
-<span class="cm">&lt;!-- va en &lt;head&gt; con defer, o al final de &lt;body&gt; --&gt;</span>
-<span class="tag">&lt;script</span> <span class="atr">src</span>=<span class="str">"js/app.js"</span> <span class="atr">defer</span><span class="tag">&gt;&lt;/script&gt;</span>
+                    <span class="cm">&lt;!-- Forma 3: External — archivo separado (recomendado) --&gt;</span>
+                    <span class="cm">&lt;!-- va en &lt;head&gt; con defer, o al final de &lt;body&gt; --&gt;</span>
+                    <span class="tag">&lt;script</span> <span class="atr">src</span>=<span
+                        class="str">"js/app.js"</span> <span class="atr">defer</span><span
+                        class="tag">&gt;&lt;/script&gt;</span>
 
-<span class="cm">&lt;!-- Estructura de archivos con external: --&gt;</span>
-<span class="cm">&lt;!--   index.html                  --&gt;</span>
-<span class="cm">&lt;!--   css/styles.css              --&gt;</span>
-<span class="cm">&lt;!--   js/app.js   ← aquí va todo el JavaScript --&gt;</span></code></pre>
+                    <span class="cm">&lt;!-- Estructura de archivos con external: --&gt;</span>
+                    <span class="cm">&lt;!-- index.html --&gt;</span>
+                    <span class="cm">&lt;!-- css/styles.css --&gt;</span>
+                    <span class="cm">&lt;!-- js/app.js ← aquí va todo el JavaScript --&gt;</span></code></pre>
 
             <div class="aviso ok">
                 <strong>Regla práctica</strong>
@@ -182,19 +189,23 @@
             </div>
 
             <pre class="code"><code><span class="cm">&lt;!-- SIN atributo en &lt;head&gt;: BLOQUEA el HTML --&gt;</span>
-<span class="tag">&lt;head&gt;</span>
-  <span class="tag">&lt;script</span> <span class="atr">src</span>=<span class="str">"app.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
-<span class="tag">&lt;/head&gt;</span>
+                    <span class="tag">&lt;head&gt;</span>
+                    <span class="tag">&lt;script</span> <span class="atr">src</span>=<span
+                        class="str">"app.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+                    <span class="tag">&lt;/head&gt;</span>
 
-<span class="cm">&lt;!-- Con DEFER en &lt;head&gt;: recomendado --&gt;</span>
-<span class="tag">&lt;head&gt;</span>
-  <span class="tag">&lt;script</span> <span class="atr">src</span>=<span class="str">"app.js"</span> <span class="atr">defer</span><span class="tag">&gt;&lt;/script&gt;</span>
-<span class="tag">&lt;/head&gt;</span>
+                    <span class="cm">&lt;!-- Con DEFER en &lt;head&gt;: recomendado --&gt;</span>
+                    <span class="tag">&lt;head&gt;</span>
+                    <span class="tag">&lt;script</span> <span class="atr">src</span>=<span class="str">"app.js"</span>
+                    <span class="atr">defer</span><span class="tag">&gt;&lt;/script&gt;</span>
+                    <span class="tag">&lt;/head&gt;</span>
 
-<span class="cm">&lt;!-- Con ASYNC en &lt;head&gt;: solo para scripts independientes --&gt;</span>
-<span class="tag">&lt;head&gt;</span>
-  <span class="tag">&lt;script</span> <span class="atr">src</span>=<span class="str">"analytics.js"</span> <span class="atr">async</span><span class="tag">&gt;&lt;/script&gt;</span>
-<span class="tag">&lt;/head&gt;</span></code></pre>
+                    <span class="cm">&lt;!-- Con ASYNC en &lt;head&gt;: solo para scripts independientes --&gt;</span>
+                    <span class="tag">&lt;head&gt;</span>
+                    <span class="tag">&lt;script</span> <span class="atr">src</span>=<span
+                        class="str">"analytics.js"</span> <span class="atr">async</span><span
+                        class="tag">&gt;&lt;/script&gt;</span>
+                    <span class="tag">&lt;/head&gt;</span></code></pre>
 
             <div class="tabla-wrap">
                 <table>
@@ -280,27 +291,35 @@
             </div>
 
             <pre class="code"><code><span class="cm">// Mensaje informativo</span>
-console.<span class="fn">log</span>(<span class="str">'Script cargado correctamente'</span>);
+                    console.<span class="fn">log</span>(<span class="str">'Script cargado correctamente'</span>);
 
-<span class="cm">// Advertencia (fondo amarillo en la consola)</span>
-console.<span class="fn">warn</span>(<span class="str">'Esta función está deprecada'</span>);
+                    <span class="cm">// Advertencia (fondo amarillo en la consola)</span>
+                    console.<span class="fn">warn</span>(<span class="str">'Esta función está deprecada'</span>);
 
-<span class="cm">// Error (fondo rojo en la consola)</span>
-console.<span class="fn">error</span>(<span class="str">'No se encontró el elemento'</span>);
+                    <span class="cm">// Error (fondo rojo en la consola)</span>
+                    console.<span class="fn">error</span>(<span class="str">'No se encontró el elemento'</span>);
 
-<span class="cm">// Mostrar el tipo de un valor (typeof)</span>
-console.<span class="fn">log</span>(<span class="kw">typeof</span> 42);          <span class="cm">// "number"</span>
-console.<span class="fn">log</span>(<span class="kw">typeof</span> <span class="str">'hola'</span>);      <span class="cm">// "string"</span>
-console.<span class="fn">log</span>(<span class="kw">typeof</span> <span class="kw">true</span>);        <span class="cm">// "boolean"</span>
-console.<span class="fn">log</span>(<span class="kw">typeof</span> <span class="kw">undefined</span>);   <span class="cm">// "undefined"</span>
-console.<span class="fn">log</span>(<span class="kw">typeof</span> <span class="kw">null</span>);        <span class="cm">// "object"  ← bug histórico de JS</span>
-console.<span class="fn">log</span>(<span class="kw">typeof</span> {});          <span class="cm">// "object"</span>
-console.<span class="fn">log</span>(<span class="kw">typeof</span> []);          <span class="cm">// "object"</span>
-console.<span class="fn">log</span>(<span class="kw">typeof</span> <span class="kw">function</span>(){});  <span class="cm">// "function"</span>
+                    <span class="cm">// Mostrar el tipo de un valor (typeof)</span>
+                    console.<span class="fn">log</span>(<span class="kw">typeof</span> 42); <span class="cm">//
+                        "number"</span>
+                    console.<span class="fn">log</span>(<span class="kw">typeof</span> <span class="str">'hola'</span>);
+                    <span class="cm">// "string"</span>
+                    console.<span class="fn">log</span>(<span class="kw">typeof</span> <span class="kw">true</span>);
+                    <span class="cm">// "boolean"</span>
+                    console.<span class="fn">log</span>(<span class="kw">typeof</span> <span
+                        class="kw">undefined</span>); <span class="cm">// "undefined"</span>
+                    console.<span class="fn">log</span>(<span class="kw">typeof</span> <span class="kw">null</span>);
+                    <span class="cm">// "object" ← bug histórico de JS</span>
+                    console.<span class="fn">log</span>(<span class="kw">typeof</span> {}); <span class="cm">//
+                        "object"</span>
+                    console.<span class="fn">log</span>(<span class="kw">typeof</span> []); <span class="cm">//
+                        "object"</span>
+                    console.<span class="fn">log</span>(<span class="kw">typeof</span> <span
+                        class="kw">function</span>(){}); <span class="cm">// "function"</span>
 
-<span class="cm">// Ver el valor de una variable en cualquier punto</span>
-<span class="kw">const</span> nombre = <span class="str">'Ana'</span>;
-console.<span class="fn">log</span>(<span class="str">'Nombre actual:'</span>, nombre);</code></pre>
+                    <span class="cm">// Ver el valor de una variable en cualquier punto</span>
+                    <span class="kw">const</span> nombre = <span class="str">'Ana'</span>;
+                    console.<span class="fn">log</span>(<span class="str">'Nombre actual:'</span>, nombre);</code></pre>
 
             <div class="aviso warn">
                 <strong>Truco de clase</strong>
@@ -335,8 +354,8 @@ console.<span class="fn">log</span>(<span class="str">'Nombre actual:'</span>, n
                     <h3><span class="icono">→</span> Punto de entrada</h3>
                     <p><code class="inline">document</code> — desde él se accede a cualquier elemento
                         de la página.</p>
-                    <pre class="code"
-                        style="margin-top:.6rem"><code>document.<span class="fn">querySelector</span>(<span class="str">'h1'</span>);</code></pre>
+                    <pre class="code" style="margin-top:.6rem"><code>document.<span
+                                class="fn">querySelector</span>(<span class="str">'h1'</span>);</code></pre>
                 </article>
             </div>
 
@@ -409,30 +428,40 @@ console.<span class="fn">log</span>(<span class="str">'Nombre actual:'</span>, n
             </div>
 
             <pre class="code"><code><span class="cm">// 1. getElementById — busca por el atributo id</span>
-<span class="kw">const</span> titulo = document.<span class="fn">getElementById</span>(<span class="str">'titulo-principal'</span>);
-<span class="kw">const</span> form   = document.<span class="fn">getElementById</span>(<span class="str">'form-contacto'</span>);
+                    <span class="kw">const</span> titulo = document.<span class="fn">getElementById</span>(<span
+                        class="str">'titulo-principal'</span>);
+                    <span class="kw">const</span> form = document.<span class="fn">getElementById</span>(<span
+                        class="str">'form-contacto'</span>);
 
-<span class="cm">// 2. querySelector — cualquier selector CSS válido</span>
-<span class="kw">const</span> boton      = document.<span class="fn">querySelector</span>(<span class="str">'.btn-primario'</span>);
-<span class="kw">const</span> nav        = document.<span class="fn">querySelector</span>(<span class="str">'nav'</span>);
-<span class="kw">const</span> primero    = document.<span class="fn">querySelector</span>(<span class="str">'li:first-child'</span>);
-<span class="kw">const</span> inputEmail = document.<span class="fn">querySelector</span>(<span class="str">'input[type="email"]'</span>);
+                    <span class="cm">// 2. querySelector — cualquier selector CSS válido</span>
+                    <span class="kw">const</span> boton = document.<span class="fn">querySelector</span>(<span
+                        class="str">'.btn-primario'</span>);
+                    <span class="kw">const</span> nav = document.<span class="fn">querySelector</span>(<span
+                        class="str">'nav'</span>);
+                    <span class="kw">const</span> primero = document.<span class="fn">querySelector</span>(<span
+                        class="str">'li:first-child'</span>);
+                    <span class="kw">const</span> inputEmail = document.<span class="fn">querySelector</span>(<span
+                        class="str">'input[type="email"]'</span>);
 
-<span class="cm">// 3. querySelectorAll — todos los que coincidan</span>
-<span class="kw">const</span> tarjetas = document.<span class="fn">querySelectorAll</span>(<span class="str">'.tarjeta'</span>);
-<span class="kw">const</span> links    = document.<span class="fn">querySelectorAll</span>(<span class="str">'a[href]'</span>);
-<span class="kw">const</span> parrafos = document.<span class="fn">querySelectorAll</span>(<span class="str">'main p'</span>);
+                    <span class="cm">// 3. querySelectorAll — todos los que coincidan</span>
+                    <span class="kw">const</span> tarjetas = document.<span class="fn">querySelectorAll</span>(<span
+                        class="str">'.tarjeta'</span>);
+                    <span class="kw">const</span> links = document.<span class="fn">querySelectorAll</span>(<span
+                        class="str">'a[href]'</span>);
+                    <span class="kw">const</span> parrafos = document.<span class="fn">querySelectorAll</span>(<span
+                        class="str">'main p'</span>);
 
-<span class="cm">// Iterar sobre el resultado de querySelectorAll</span>
-tarjetas.<span class="fn">forEach</span>(<span class="kw">function</span>(tarjeta) {
-  console.<span class="fn">log</span>(tarjeta.textContent);
-});
+                    <span class="cm">// Iterar sobre el resultado de querySelectorAll</span>
+                    tarjetas.<span class="fn">forEach</span>(<span class="kw">function</span>(tarjeta) {
+                    console.<span class="fn">log</span>(tarjeta.textContent);
+                    });
 
-<span class="cm">// Buena práctica: verificar que el elemento existe</span>
-<span class="kw">const</span> el = document.<span class="fn">querySelector</span>(<span class="str">'#popup'</span>);
-<span class="kw">if</span> (el) {
-  console.<span class="fn">log</span>(<span class="str">'Popup encontrado'</span>);
-}</code></pre>
+                    <span class="cm">// Buena práctica: verificar que el elemento existe</span>
+                    <span class="kw">const</span> el = document.<span class="fn">querySelector</span>(<span
+                        class="str">'#popup'</span>);
+                    <span class="kw">if</span> (el) {
+                    console.<span class="fn">log</span>(<span class="str">'Popup encontrado'</span>);
+                    }</code></pre>
 
             <div class="aviso warn">
                 <strong>Buena práctica</strong>
@@ -450,50 +479,61 @@ tarjetas.<span class="fn">forEach</span>(<span class="kw">function</span>(tarjet
             <h2><span class="num">7</span> Modificar el DOM desde JavaScript</h2>
             <p class="lead">Contenido, estilos, atributos y clases.</p>
 
-            <pre
-                class="code"><code><span class="cm">// ---- Contenido ----</span>
-<span class="kw">const</span> titulo = document.<span class="fn">querySelector</span>(<span class="str">'h1'</span>);
+            <pre class="code"><code><span class="cm">// ---- Contenido ----</span>
+                    <span class="kw">const</span> titulo = document.<span class="fn">querySelector</span>(<span
+                        class="str">'h1'</span>);
 
-<span class="cm">// textContent — texto plano (seguro, no interpreta HTML)</span>
-titulo.textContent = <span class="str">'Nuevo título'</span>;
+                    <span class="cm">// textContent — texto plano (seguro, no interpreta HTML)</span>
+                    titulo.textContent = <span class="str">'Nuevo título'</span>;
 
-<span class="cm">// innerHTML — puede incluir etiquetas HTML</span>
-<span class="cm">// ¡Cuidado! Riesgo de XSS si el texto viene del usuario</span>
-titulo.innerHTML = <span class="str">'&lt;em&gt;Título&lt;/em&gt; en cursiva'</span>;
+                    <span class="cm">// innerHTML — puede incluir etiquetas HTML</span>
+                    <span class="cm">// ¡Cuidado! Riesgo de XSS si el texto viene del usuario</span>
+                    titulo.innerHTML = <span class="str">'&lt;em&gt;Título&lt;/em&gt; en cursiva'</span>;
 
-<span class="cm">// ---- Estilos inline ----</span>
-<span class="kw">const</span> caja = document.<span class="fn">querySelector</span>(<span class="str">'.caja'</span>);
-caja.style.color           = <span class="str">'#c8a227'</span>;
-caja.style.backgroundColor = <span class="str">'#1e3a5f'</span>;
-caja.style.display         = <span class="str">'none'</span>;   <span class="cm">// ocultar</span>
-caja.style.display         = <span class="str">'block'</span>;  <span class="cm">// mostrar</span>
+                    <span class="cm">// ---- Estilos inline ----</span>
+                    <span class="kw">const</span> caja = document.<span class="fn">querySelector</span>(<span
+                        class="str">'.caja'</span>);
+                    caja.style.color = <span class="str">'#c8a227'</span>;
+                    caja.style.backgroundColor = <span class="str">'#1e3a5f'</span>;
+                    caja.style.display = <span class="str">'none'</span>; <span class="cm">// ocultar</span>
+                    caja.style.display = <span class="str">'block'</span>; <span class="cm">// mostrar</span>
 
-<span class="cm">// ---- Atributos ----</span>
-<span class="kw">const</span> img = document.<span class="fn">querySelector</span>(<span class="str">'img'</span>);
-img.<span class="fn">setAttribute</span>(<span class="str">'alt'</span>, <span class="str">'Descripción nueva'</span>);
-<span class="kw">const</span> claseActual = img.<span class="fn">getAttribute</span>(<span class="str">'class'</span>);</code></pre>
+                    <span class="cm">// ---- Atributos ----</span>
+                    <span class="kw">const</span> img = document.<span class="fn">querySelector</span>(<span
+                        class="str">'img'</span>);
+                    img.<span class="fn">setAttribute</span>(<span class="str">'alt'</span>, <span
+                        class="str">'Descripción nueva'</span>);
+                    <span class="kw">const</span> claseActual = img.<span class="fn">getAttribute</span>(<span
+                        class="str">'class'</span>);</code></pre>
 
             <div class="grid">
                 <article class="card">
                     <h3><span class="icono">≡</span> classList — manipular clases CSS</h3>
-                    <pre class="code"><code><span class="kw">const</span> tarjeta = document.<span class="fn">querySelector</span>(<span class="str">'.tarjeta'</span>);
+                    <pre class="code"><code><span class="kw">const</span> tarjeta = document.<span
+                                class="fn">querySelector</span>(<span class="str">'.tarjeta'</span>);
 
-tarjeta.classList.<span class="fn">add</span>(<span class="str">'activo'</span>);      <span class="cm">// agrega</span>
-tarjeta.classList.<span class="fn">remove</span>(<span class="str">'activo'</span>);   <span class="cm">// quita</span>
-tarjeta.classList.<span class="fn">toggle</span>(<span class="str">'expandido'</span>); <span class="cm">// agrega o quita</span>
+                            tarjeta.classList.<span class="fn">add</span>(<span class="str">'activo'</span>); <span
+                                class="cm">// agrega</span>
+                            tarjeta.classList.<span class="fn">remove</span>(<span class="str">'activo'</span>); <span
+                                class="cm">// quita</span>
+                            tarjeta.classList.<span class="fn">toggle</span>(<span class="str">'expandido'</span>);
+                            <span class="cm">// agrega o quita</span>
 
-<span class="kw">if</span> (tarjeta.classList.<span class="fn">contains</span>(<span class="str">'activo'</span>)) {
-  console.<span class="fn">log</span>(<span class="str">'La tarjeta está activa'</span>);
-}</code></pre>
+                            <span class="kw">if</span> (tarjeta.classList.<span class="fn">contains</span>(<span
+                                class="str">'activo'</span>)) {
+                            console.<span class="fn">log</span>(<span class="str">'La tarjeta está activa'</span>);
+                            }</code></pre>
                 </article>
 
                 <article class="card">
                     <h3><span class="icono">★</span> Ejemplo real: mostrar / ocultar</h3>
                     <pre class="code"><code><span class="cm">/* En CSS */</span>
-.oculto { display: none; }</code></pre>
+                            .oculto { display: none; }</code></pre>
                     <pre class="code"><code><span class="cm">// En JS</span>
-<span class="kw">const</span> panel = document.<span class="fn">querySelector</span>(<span class="str">'.panel'</span>);
-panel.classList.<span class="fn">toggle</span>(<span class="str">'oculto'</span>);</code></pre>
+                            <span class="kw">const</span> panel = document.<span class="fn">querySelector</span>(<span
+                                class="str">'.panel'</span>);
+                            panel.classList.<span class="fn">toggle</span>(<span class="str">'oculto'</span>);</code>
+                    </pre>
                     <p><strong>JS solo cambia clases; los estilos viven en CSS.</strong></p>
                 </article>
             </div>
@@ -514,23 +554,28 @@ panel.classList.<span class="fn">toggle</span>(<span class="str">'oculto'</span>
             <p class="lead">Así reacciona la página a lo que hace el usuario.</p>
 
             <pre class="code"><code><span class="cm">// elemento.addEventListener('evento', función)</span>
-<span class="kw">const</span> boton = document.<span class="fn">querySelector</span>(<span class="str">'#btn-boton'</span>);
+                    <span class="kw">const</span> boton = document.<span class="fn">querySelector</span>(<span
+                        class="str">'#btn-boton'</span>);
 
-boton.<span class="fn">addEventListener</span>(<span class="str">'click'</span>, <span class="kw">function</span>(event) {
-  console.<span class="fn">log</span>(<span class="str">'Clic en:'</span>, event.target);
-  event.target.textContent = <span class="str">'¡Clic!'</span>;
-});
+                    boton.<span class="fn">addEventListener</span>(<span class="str">'click'</span>, <span
+                        class="kw">function</span>(event) {
+                    console.<span class="fn">log</span>(<span class="str">'Clic en:'</span>, event.target);
+                    event.target.textContent = <span class="str">'¡Clic!'</span>;
+                    });
 
-<span class="cm">// Campo de formulario</span>
-<span class="kw">const</span> campo = document.<span class="fn">querySelector</span>(<span class="str">'#nombre'</span>);
-campo.<span class="fn">addEventListener</span>(<span class="str">'input'</span>, <span class="kw">function</span>(event) {
-  console.<span class="fn">log</span>(<span class="str">'Valor:'</span>, event.target.value);
-});
+                    <span class="cm">// Campo de formulario</span>
+                    <span class="kw">const</span> campo = document.<span class="fn">querySelector</span>(<span
+                        class="str">'#nombre'</span>);
+                    campo.<span class="fn">addEventListener</span>(<span class="str">'input'</span>, <span
+                        class="kw">function</span>(event) {
+                    console.<span class="fn">log</span>(<span class="str">'Valor:'</span>, event.target.value);
+                    });
 
-<span class="cm">// DOMContentLoaded — alternativa a defer en &lt;head&gt;</span>
-document.<span class="fn">addEventListener</span>(<span class="str">'DOMContentLoaded'</span>, () => {
-  console.<span class="fn">log</span>(<span class="str">'DOM listo'</span>);
-});</code></pre>
+                    <span class="cm">// DOMContentLoaded — alternativa a defer en &lt;head&gt;</span>
+                    document.<span class="fn">addEventListener</span>(<span class="str">'DOMContentLoaded'</span>, () =>
+                    {
+                    console.<span class="fn">log</span>(<span class="str">'DOM listo'</span>);
+                    });</code></pre>
 
             <div class="tabla-wrap">
                 <table>
@@ -601,64 +646,82 @@ document.<span class="fn">addEventListener</span>(<span class="str">'DOMContentL
             <h3 style="color:var(--azul); margin-top:1.8rem">styles.css</h3>
             <pre class="code"><code>.oculto { display: none; }
 
-.tarjeta {
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  padding: 1rem;
-  margin: 1rem;
-  max-width: 300px;
-}
+                    .tarjeta {
+                    border: 1px solid #ccc;
+                    border-radius: 12px;
+                    padding: 1rem;
+                    margin: 1rem;
+                    max-width: 300px;
+                    }
 
-<span class="cm">/* .btn-detalle: color, background, cursor — ver styles.css */</span></code></pre>
+                    <span class="cm">/* .btn-detalle: color, background, cursor — ver styles.css */</span></code></pre>
 
             <h3 style="color:var(--azul)">index.html — estructura de la tarjeta</h3>
             <pre class="code"><code><span class="tag">&lt;!DOCTYPE html&gt;</span>
-<span class="tag">&lt;html</span> <span class="atr">lang</span>=<span class="str">"es"</span><span class="tag">&gt;</span>
-<span class="tag">&lt;head&gt;</span>
-  <span class="tag">&lt;meta</span> <span class="atr">charset</span>=<span class="str">"UTF-8"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;meta</span> <span class="atr">name</span>=<span class="str">"viewport"</span> <span class="atr">content</span>=<span class="str">"width=device-width, initial-scale=1"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;link</span> <span class="atr">rel</span>=<span class="str">"stylesheet"</span> <span class="atr">href</span>=<span class="str">"styles.css"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;title&gt;</span>Tarjetas de producto<span class="tag">&lt;/title&gt;</span>
-<span class="tag">&lt;/head&gt;</span>
-<span class="tag">&lt;body&gt;</span>
+                    <span class="tag">&lt;html</span> <span class="atr">lang</span>=<span class="str">"es"</span><span
+                        class="tag">&gt;</span>
+                    <span class="tag">&lt;head&gt;</span>
+                    <span class="tag">&lt;meta</span> <span class="atr">charset</span>=<span
+                        class="str">"UTF-8"</span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;meta</span> <span class="atr">name</span>=<span class="str">"viewport"</span>
+                    <span class="atr">content</span>=<span class="str">"width=device-width, initial-scale=1"</span><span
+                        class="tag">&gt;</span>
+                    <span class="tag">&lt;link</span> <span class="atr">rel</span>=<span class="str">"stylesheet"</span>
+                    <span class="atr">href</span>=<span class="str">"styles.css"</span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;title&gt;</span>Tarjetas de producto<span class="tag">&lt;/title&gt;</span>
+                    <span class="tag">&lt;/head&gt;</span>
+                    <span class="tag">&lt;body&gt;</span>
 
-  <span class="tag">&lt;div</span> <span class="atr">class</span>=<span class="str">"tarjeta"</span><span class="tag">&gt;</span>
-    <span class="tag">&lt;h2&gt;</span>Auriculares Pro X200<span class="tag">&lt;/h2&gt;</span>
-    <span class="tag">&lt;p</span> <span class="atr">class</span>=<span class="str">"precio"</span><span class="tag">&gt;&lt;strong&gt;</span>$49.99<span class="tag">&lt;/strong&gt;&lt;/p&gt;</span>
+                    <span class="tag">&lt;div</span> <span class="atr">class</span>=<span
+                        class="str">"tarjeta"</span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;h2&gt;</span>Auriculares Pro X200<span class="tag">&lt;/h2&gt;</span>
+                    <span class="tag">&lt;p</span> <span class="atr">class</span>=<span class="str">"precio"</span><span
+                        class="tag">&gt;&lt;strong&gt;</span>$49.99<span class="tag">&lt;/strong&gt;&lt;/p&gt;</span>
 
-    <span class="tag">&lt;button</span> <span class="atr">class</span>=<span class="str">"btn-detalle"</span> <span class="atr">data-target</span>=<span class="str">"detalle-1"</span><span class="tag">&gt;</span>
-      Ver detalles
-    <span class="tag">&lt;/button&gt;</span>
+                    <span class="tag">&lt;button</span> <span class="atr">class</span>=<span
+                        class="str">"btn-detalle"</span> <span class="atr">data-target</span>=<span
+                        class="str">"detalle-1"</span><span class="tag">&gt;</span>
+                    Ver detalles
+                    <span class="tag">&lt;/button&gt;</span>
 
-    <span class="tag">&lt;div</span> <span class="atr">class</span>=<span class="str">"detalle oculto"</span> <span class="atr">id</span>=<span class="str">"detalle-1"</span><span class="tag">&gt;</span>
-      <span class="tag">&lt;p&gt;</span>Bluetooth 5.0 · 30 h de batería<span class="tag">&lt;/p&gt;</span>
-      <span class="tag">&lt;p&gt;</span>Cancelación de ruido activa<span class="tag">&lt;/p&gt;</span>
-      <span class="tag">&lt;p&gt;</span>Compatible con Windows, macOS y Linux<span class="tag">&lt;/p&gt;</span>
-    <span class="tag">&lt;/div&gt;</span>
-  <span class="tag">&lt;/div&gt;</span>
+                    <span class="tag">&lt;div</span> <span class="atr">class</span>=<span class="str">"detalle
+                        oculto"</span> <span class="atr">id</span>=<span class="str">"detalle-1"</span><span
+                        class="tag">&gt;</span>
+                    <span class="tag">&lt;p&gt;</span>Bluetooth 5.0 · 30 h de batería<span class="tag">&lt;/p&gt;</span>
+                    <span class="tag">&lt;p&gt;</span>Cancelación de ruido activa<span class="tag">&lt;/p&gt;</span>
+                    <span class="tag">&lt;p&gt;</span>Compatible con Windows, macOS y Linux<span
+                        class="tag">&lt;/p&gt;</span>
+                    <span class="tag">&lt;/div&gt;</span>
+                    <span class="tag">&lt;/div&gt;</span>
 
-  <span class="tag">&lt;script</span> <span class="atr">src</span>=<span class="str">"js/app.js"</span> <span class="atr">defer</span><span class="tag">&gt;&lt;/script&gt;</span>
-<span class="tag">&lt;/body&gt;</span>
-<span class="tag">&lt;/html&gt;</span></code></pre>
+                    <span class="tag">&lt;script</span> <span class="atr">src</span>=<span
+                        class="str">"js/app.js"</span> <span class="atr">defer</span><span
+                        class="tag">&gt;&lt;/script&gt;</span>
+                    <span class="tag">&lt;/body&gt;</span>
+                    <span class="tag">&lt;/html&gt;</span></code></pre>
 
             <h3 style="color:var(--azul)">js/app.js — solución</h3>
-            <pre class="code"><code><span class="kw">const</span> botones = document.<span class="fn">querySelectorAll</span>(<span class="str">'.btn-detalle'</span>);
+            <pre class="code"><code><span class="kw">const</span> botones = document.<span
+                        class="fn">querySelectorAll</span>(<span class="str">'.btn-detalle'</span>);
 
-botones.<span class="fn">forEach</span>(<span class="kw">function</span>(boton) {
-  boton.<span class="fn">addEventListener</span>(<span class="str">'click'</span>, <span class="kw">function</span>(event) {
+                    botones.<span class="fn">forEach</span>(<span class="kw">function</span>(boton) {
+                    boton.<span class="fn">addEventListener</span>(<span class="str">'click'</span>, <span
+                        class="kw">function</span>(event) {
 
-    <span class="kw">const</span> targetId = event.target.<span class="fn">getAttribute</span>(<span class="str">'data-target'</span>);
-    <span class="kw">const</span> panel    = document.<span class="fn">getElementById</span>(targetId);
+                    <span class="kw">const</span> targetId = event.target.<span class="fn">getAttribute</span>(<span
+                        class="str">'data-target'</span>);
+                    <span class="kw">const</span> panel = document.<span class="fn">getElementById</span>(targetId);
 
-    panel.classList.<span class="fn">toggle</span>(<span class="str">'oculto'</span>);
+                    panel.classList.<span class="fn">toggle</span>(<span class="str">'oculto'</span>);
 
-    <span class="kw">if</span> (panel.classList.<span class="fn">contains</span>(<span class="str">'oculto'</span>)) {
-      event.target.textContent = <span class="str">'Ver detalles'</span>;
-    } <span class="kw">else</span> {
-      event.target.textContent = <span class="str">'Ocultar'</span>;
-    }
-  });
-});</code></pre>
+                    <span class="kw">if</span> (panel.classList.<span class="fn">contains</span>(<span
+                        class="str">'oculto'</span>)) {
+                    event.target.textContent = <span class="str">'Ver detalles'</span>;
+                    } <span class="kw">else</span> {
+                    event.target.textContent = <span class="str">'Ocultar'</span>;
+                    }
+                    });
+                    });</code></pre>
 
             <h3 style="color:var(--azul)">Línea por línea</h3>
             <ol class="pasos">
@@ -711,8 +774,8 @@ botones.<span class="fn">forEach</span>(<span class="kw">function</span>(boton) 
                         </tr>
                         <tr>
                             <td>External script</td>
-                            <td>Archivo <code class="inline">.js</code> separado con <code
-                                    class="inline">&lt;script src="..." defer&gt;</code>. Forma recomendada.</td>
+                            <td>Archivo <code class="inline">.js</code> separado con <code class="inline">&lt;script
+                                    src="..." defer&gt;</code>. Forma recomendada.</td>
                         </tr>
                         <tr>
                             <td>defer</td>
@@ -881,6 +944,8 @@ botones.<span class="fn">forEach</span>(<span class="kw">function</span>(boton) 
             });
         });
     </script>
+
+    <script src="./script.js"></script>
 
 </body>
 

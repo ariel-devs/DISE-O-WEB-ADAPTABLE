@@ -36,3 +36,21 @@ const campo = document.querySelector("#nombre");
 campo.addEventListener("input", (event) => {
   console.log("valor: ", event.target.value);
 })
+
+const boton_ejercicio = document.querySelectorAll(".btn-detalle");
+
+boton_ejercicio.forEach((boton) => {
+    boton.addEventListener("click", (event) => {
+        const targetId = event.target.getAttribute('data-target');
+        const panel = document.getElementById(targetId);
+
+        if(!panel){
+            console.error("no se encontro el panel con id: " + targetId);
+            return
+        }
+
+        panel.classList.toggle("ocultar");
+        event.target.textContent = panel.classList.contains('oculto') ? "Ver detalle" : "Ocultar"
+    })
+})
+
